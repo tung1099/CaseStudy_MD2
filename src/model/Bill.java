@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Bill {
+public class Bill implements Serializable {
     Customer customer;
     ArrayList<ShoppingCart> shoppingCartArrayList;
     private double totalMoney;

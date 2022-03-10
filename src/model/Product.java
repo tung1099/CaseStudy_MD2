@@ -1,19 +1,23 @@
 package model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable, Comparable<Product> {
     private String id;
     private String name;
     private String gender;
+    private String color;
     private int price;
     private int quantity;
 
     public Product() {
     }
 
-    public Product(String id, String name, String gender, int price, int quantity) {
+    public Product(String id, String name, String gender,  String color, int price, int quantity) {
         this.id = id;
         this.name = name;
         this.gender = gender;
+        this.color = color;
         this.price = price;
         this.quantity = quantity;
     }
@@ -42,6 +46,14 @@ public class Product {
         this.gender = gender;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public int getPrice() {
         return price;
     }
@@ -60,12 +72,17 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        return "[Product || " + "ID: " + id +
+                "-Tên sản phẩm: " + name +
+                "-Giới tính: " + gender +
+                "-Màu sắc: " + color +
+                "-Giá tiền: " + price +
+                "-Số lượng: " + quantity +
+                "]";
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return  price - o.price;
     }
 }
