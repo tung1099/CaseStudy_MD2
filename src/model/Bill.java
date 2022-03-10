@@ -1,18 +1,35 @@
 package model;
 
-public class Bill extends Customer{
+import java.util.ArrayList;
+
+public class Bill {
+    Customer customer;
+    ArrayList<ShoppingCart> shoppingCartArrayList;
     private double totalMoney;
 
     public Bill() {
     }
 
-    public Bill(double totalMoney) {
+    public Bill(Customer customer, ArrayList<ShoppingCart> shoppingCartArrayList, double totalMoney) {
+        this.customer = customer;
+        this.shoppingCartArrayList = shoppingCartArrayList;
         this.totalMoney = totalMoney;
     }
 
-    public Bill(String customerId, String name, String address, String numberPhone, double totalMoney) {
-        super(customerId, name, address, numberPhone);
-        this.totalMoney = totalMoney;
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public ArrayList<ShoppingCart> getShoppingCartArrayList() {
+        return shoppingCartArrayList;
+    }
+
+    public void setShoppingCartArrayList(ArrayList<ShoppingCart> shoppingCartArrayList) {
+        this.shoppingCartArrayList = shoppingCartArrayList;
     }
 
     public double getTotalMoney() {
@@ -26,7 +43,9 @@ public class Bill extends Customer{
     @Override
     public String toString() {
         return "Bill{" +
-                "totalMoney=" + totalMoney +
+                "customer=" + customer +
+                ", shoppingCartArrayList=" + shoppingCartArrayList +
+                ", totalMoney=" + totalMoney +
                 '}';
     }
 }

@@ -1,10 +1,9 @@
 package controller;
 
 import model.Product;
+import storage.ProductFile;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
 
 public class ProductManager {
-
 }

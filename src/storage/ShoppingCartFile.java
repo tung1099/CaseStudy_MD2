@@ -1,19 +1,20 @@
 package storage;
 
 import model.Product;
+import model.ShoppingCart;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductFile {
-    public static void writeFile(List<Product> productList) throws IOException{
+public class ShoppingCartFile {
+    public static void writeFile(List<ShoppingCart> shoppingCartList) throws IOException {
         FileOutputStream fos = null;
         ObjectOutputStream oos=null;
         try {
-            fos = new FileOutputStream("product.txt");
+            fos = new FileOutputStream("shoppingCart.txt");
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(productList);
+            oos.writeObject(shoppingCartList);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -24,16 +25,16 @@ public class ProductFile {
             fos.close();
         }
     }
-    public static List<Product> readFile(){
-        File file = new  File("product.txt");
+    public static List<ShoppingCart> readFile(){
+        File file = new  File("shoppingCart.txt");
         try {
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             Object result = ois.readObject();
-            List<Product> productList = (List<Product>) result;
+            List<ShoppingCart> shoppingCartList  = (List<ShoppingCart>) result;
             ois.close();
             fis.close();
-            return productList;
+            return shoppingCartList ;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

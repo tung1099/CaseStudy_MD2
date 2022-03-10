@@ -2,19 +2,34 @@ package model;
 
 import java.util.ArrayList;
 
-public class ShoppingCart extends Customer{
+public class ShoppingCart {
+    Customer customer;
+    ArrayList<Product> productArrayList;
     private boolean isPaid;
 
     public ShoppingCart() {
     }
 
-    public ShoppingCart(boolean isPaid) {
+    public ShoppingCart(Customer customer, ArrayList<Product> productArrayList, boolean isPaid) {
+        this.customer = customer;
+        this.productArrayList = productArrayList;
         this.isPaid = isPaid;
     }
 
-    public ShoppingCart(String customerId, String name, String address, String numberPhone, boolean isPaid) {
-        super(customerId, name, address, numberPhone);
-        this.isPaid = isPaid;
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public ArrayList<Product> getProductArrayList() {
+        return productArrayList;
+    }
+
+    public void setProductArrayList(ArrayList<Product> productArrayList) {
+        this.productArrayList = productArrayList;
     }
 
     public boolean isPaid() {
@@ -28,7 +43,12 @@ public class ShoppingCart extends Customer{
     @Override
     public String toString() {
         return "ShoppingCart{" +
-                "isPaid=" + isPaid +
+                "customer=" + customer +
+                ", productArrayList=" + productArrayList +
+                ", isPaid=" + isPaid +
                 '}';
     }
 }
+
+
+
