@@ -72,13 +72,12 @@ public class Product implements Serializable, Comparable<Product> {
 
     @Override
     public String toString() {
-        return "[Product || " + "ID: " + id +
-                "-Tên sản phẩm: " + name +
-                "-Giới tính: " + gender +
-                "-Màu sắc: " + color +
-                "-Giá tiền: " + price +
-                "-Số lượng: " + quantity +
-                "]";
+        return "Product || " + "  ID: " + id +
+                "-Tên sản phẩm: '" + name + '\'' +
+                "-Giới tính: '" + gender + '\'' +
+                "-Màu sắc: '" + color + '\'' +
+                "-Giá tiền: " + price + " VNĐ" +
+                "-Số lượng: " + quantity;
     }
 
     @Override

@@ -51,12 +51,11 @@ public class Customer implements Serializable {
     }
 
     @Override
-    public String  toString() {
-        return "Customer{" +
-                "customerId='" + customerId + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", numberPhone='" + numberPhone + '\'' +
-                '}';
+    public String toString() {
+        return "Thông tin khách hàng ||" +
+                "  ID: '" + customerId + '\'' +
+                "- Tên: '" + name + '\'' +
+                "- Địa chỉ: '" + address + '\'' +
+                "- Số điện thoại: '" + numberPhone + '\'';
     }
 }

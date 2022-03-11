@@ -1,12 +1,13 @@
 package Client;
 
+import view.CustomerView;
 import view.ProductView;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
         while (choice != 0) {
@@ -23,6 +24,13 @@ public class Main {
                 case 1:
                     try {
                         ProductView.displayProductView();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 2:
+                    try {
+                        CustomerView.displayCustomerView();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

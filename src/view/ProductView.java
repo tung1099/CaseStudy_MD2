@@ -16,7 +16,6 @@ public class ProductView {
         List<Product> productList = null;
         productList = ProductFile.readFile();
         ProductManager productManager = new ProductManager(productList);
-
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
         while (choice != 0){
@@ -43,6 +42,7 @@ public class ProductView {
                     }
                     System.out.println("Nhập ID phẩm muốn sửa: ");
                     String id = sc.nextLine();
+                    System.out.println("Nhập lại thông tin sản phẩm");
                     Product product = productManager.productInfo();
                     try {
                         productManager.editProductById(id, product);

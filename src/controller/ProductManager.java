@@ -14,17 +14,17 @@ public class ProductManager {
 
          public  Product productInfo(){
              Scanner scanner = new Scanner(System.in);
-             System.out.println("Nhập Id sản phẩm: ");
+             System.out.print("Nhập Id sản phẩm: ");
              String id = scanner.nextLine();
-             System.out.println("Nhập tên sản phẩm: ");
+             System.out.print("Nhập tên sản phẩm: ");
              String name = scanner.nextLine();
-             System.out.println("Giới tính: ");
+             System.out.print("Giới tính: ");
              String gender = scanner.nextLine();
-             System.out.println("Màu sắc: ");
+             System.out.print("Màu sắc: ");
              String color = scanner.nextLine();
-             System.out.println("Giá sản phẩm; ");
+             System.out.print("Giá sản phẩm; ");
              int price = scanner.nextInt();
-             System.out.println("Số lượng: ");
+             System.out.print("Số lượng: ");
              int quantity = scanner.nextInt();
              Product product = new Product(id, name, gender, color, price, quantity);
              return product;
