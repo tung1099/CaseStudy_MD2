@@ -4,13 +4,12 @@ import model.Product;
 import storage.ProductFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductManager {
-         List<Product> productList = ProductFile.readFile();
+                List<Product> productList = ProductFile.readFile();
 
          public  Product productInfo(){
              Scanner scanner = new Scanner(System.in);

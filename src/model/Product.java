@@ -10,7 +10,7 @@ public class Product implements Serializable, Comparable<Product> {
     private int price;
     private int quantity;
 
-    public Product() {
+    public Product(String id, String name, String gender, int price) {
     }
 
     public Product(String id, String name, String gender,  String color, int price, int quantity) {

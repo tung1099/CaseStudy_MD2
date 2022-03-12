@@ -2,6 +2,7 @@ package Client;
 
 import view.CustomerView;
 import view.ProductView;
+import view.ShoppingCartView;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -35,6 +36,13 @@ public class Main {
                         e.printStackTrace();
                     }
                     break;
+                case 3:
+                    try {
+                        ShoppingCartView.displayShoppingCartView();
+                    } catch (IOException e){
+                        e.printStackTrace();
+                }
+                case 4:
             }
         }
     }

@@ -14,7 +14,7 @@ public class ShoppingCart implements Serializable {
     public ShoppingCart(Customer customer, ArrayList<Product> productArrayList, boolean isPaid) {
         this.customer = customer;
         this.productArrayList = productArrayList;
-        this.isPaid = isPaid;
+        this.isPaid = false;
     }
 
     public Customer getCustomer() {
