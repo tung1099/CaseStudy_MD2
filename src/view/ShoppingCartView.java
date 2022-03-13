@@ -1,13 +1,17 @@
 package view;
 
 import controller.ShoppingCartManager;
+import model.Product;
+import storage.CustomerFile;
 import storage.ProductFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class ShoppingCartView {
-   public static void displayShoppingCartView() throws IOException{
+
+    public static void displayShoppingCartView() throws IOException{
        ShoppingCartManager shoppingCartManager = new ShoppingCartManager();
 
        Scanner scanner = new Scanner(System.in);
@@ -25,21 +29,28 @@ public class ShoppingCartView {
 
            switch (choice){
                case 1:
-                   System.out.println(ProductFile.readFile());
+                   System.out.println("Danh sách sản phẩm hiện tại: ");
+                   System.out.println(ProductFile.readFile() );
+                   System.out.println("Danh sách khách hàng hiện tại; ");
+                   System.out.println(CustomerFile.readFile());
                    System.out.print("Nhập ID khách hàng: ");
-                   String idCustomer = sc.nextLine();
+                   String customerId = sc.nextLine();
                    System.out.print("Nhập ID sản phẩm: ");
-                   String idProduct = sc.nextLine();
+                   String productId = sc.nextLine();
                    System.out.print("Nhập số lượng: ");
                    int quantity = sc.nextInt();
-                   shoppingCartManager.addShoppingCart(idCustomer, idProduct, quantity);
+                   shoppingCartManager.addShoppingCart(customerId, productId, quantity);
                    break;
                case 2:
                    System.out.println("Danh sách giỏ hàng hiện tại");
                    shoppingCartManager.displayShoppingCart();
                    System.out.print("Nhập mã khách hàng: ");
                    String id = sc.nextLine();
-                   shoppingCartManager.deleteShoppingCartByCustomerId(id);
+                   try {
+                       shoppingCartManager.deleteShoppingCartByCustomerId(id);
+                   } catch (IOException e) {
+                       e.printStackTrace();
+                   }
                    break;
                case 3:
                    shoppingCartManager.displayShoppingCart();

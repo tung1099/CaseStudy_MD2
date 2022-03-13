@@ -56,6 +56,6 @@ public class Customer implements Serializable {
                 "  ID: '" + customerId + '\'' +
                 "- Tên: '" + name + '\'' +
                 "- Địa chỉ: '" + address + '\'' +
-                "- Số điện thoại: '" + numberPhone + '\'';
+                "- Số điện thoại: '" + numberPhone + '\'' + "\n";
     }
 }

@@ -10,7 +10,6 @@ import storage.ShoppingCartFile;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class ShoppingCartManager {
     List<ShoppingCart> shoppingCartList = ShoppingCartFile.readFile();
@@ -19,8 +18,16 @@ public class ShoppingCartManager {
     List<Customer> customerList = CustomerFile.readFile();
 
     public void addShoppingCart(String customerId, String productId, int quantity) throws IOException{
-        Customer customer = new Customer();
+        Customer customer =new Customer();
         Product product;
+        for (int i = 0; i < shoppingCartList.size(); i++) {
+            if (customerList.get(i).getCustomerId().equals(customerId)){
+                for (Customer c: customerList
+                     ) {
+                    System.out.println(c);
+                }
+            }
+        }
         for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i).getId().equals(productId)){
                 Product product1 = productList.get(i);
@@ -31,10 +38,13 @@ public class ShoppingCartManager {
                 ProductFile.writeFile(productList);
             }
         }
+        ShoppingCart shoppingCart = new ShoppingCart(customer, newtList);
+        shoppingCartList.add(shoppingCart);
+        ShoppingCartFile.writeFile(shoppingCartList);
     }
     public void deleteShoppingCartByCustomerId(String customerId) throws IOException{
         for (int i = 0; i < shoppingCartList.size(); i++) {
-            if (shoppingCartList.get(i).getCustomer().getCustomerId().equals(customerId)){
+            if (customerList.get(i).getCustomerId().equals(customerId)){
                 shoppingCartList.remove(i);
             }
         }
@@ -47,15 +57,7 @@ public class ShoppingCartManager {
         }
     }
 
-    public ShoppingCartManager() {
-    }
-
-    public ShoppingCartManager(List<ShoppingCart> shoppingCartList, List<Product> newtList,
-                               List<Product> productList, List<Customer> customerList) {
-        this.shoppingCartList = shoppingCartList;
-        this.newtList = newtList;
-        this.productList = productList;
-        this.customerList = customerList;
+    public ShoppingCartManager() throws  IOException{
     }
 
     public List<ShoppingCart> getShoppingCartList() {
@@ -90,13 +92,10 @@ public class ShoppingCartManager {
         this.customerList = customerList;
     }
 
+
     @Override
     public String toString() {
-        return "ShoppingCartManager{" +
-                "shoppingCartList=" + shoppingCartList +
-                ", newtList=" + newtList +
-                ", productList=" + productList +
-                ", customerList=" + customerList +
-                '}';
+        return "Giỏ hàng || " + " Thông tin khách hàng " + customerList +
+                "Sản phẩm : " + productList;
     }
 }

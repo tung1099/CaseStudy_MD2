@@ -77,7 +77,7 @@ public class Product implements Serializable, Comparable<Product> {
                 "-Giới tính: '" + gender + '\'' +
                 "-Màu sắc: '" + color + '\'' +
                 "-Giá tiền: " + price + " VNĐ" +
-                "-Số lượng: " + quantity;
+                "-Số lượng: " + quantity + "\n";
     }
 
     @Override

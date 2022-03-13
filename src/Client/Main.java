@@ -16,7 +16,6 @@ public class Main {
             System.out.println("1. Quản lý sản phẩm");
             System.out.println("2. Quản lý khách hàng");
             System.out.println("3. Quản lý giỏ hàng");
-            System.out.println("4. Quản lý hóa đơn");
             System.out.println("0. Thoát");
             System.out.print("Nhập lựa chọn: ");
             choice = scanner.nextInt();
@@ -42,7 +41,6 @@ public class Main {
                     } catch (IOException e){
                         e.printStackTrace();
                 }
-                case 4:
             }
         }
     }
